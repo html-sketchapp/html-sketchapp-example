@@ -1,0 +1,26 @@
+{
+  "name": "html-sketchapp-example",
+  "version": "1.0.0",
+  "description": "Template / example usage of brainly/html-sketchapp",
+  "scripts": {
+    "test": "eslint src/",
+    "build": "webpack",
+    "inject": "node ./src/inject.js"
+  },
+  "repository": "brainly/html-sketchapp-example",
+  "author": "Konrad Dzwinel <konrad.dzwinel@brainly.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brainly/html-sketchapp-example/issues"
+  },
+  "homepage": "https://github.com/brainly/html-sketchapp-example#readme",
+  "devDependencies": {
+    "eslint": "^4.4.1",
+    "frontend-tools-configs": "git+https://github.com/brainly/frontend-tools-configs.git"
+  },
+  "dependencies": {
+    "html-sketchapp": "github:brainly/html-sketchapp",
+    "puppeteer": "^0.9.0",
+    "webpack": "^3.0.0"
+  }
+}
