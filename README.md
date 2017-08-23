@@ -15,3 +15,12 @@ npm run inject http://sketchapp.com . # takes an URL and path where page.asketch
 ```
 
 Created `page.asketch.json` file can then be loaded into Sketch using the [brainly/html-sketchapp](https://github.com/brainly/html-sketchapp) plugin.
+
+# It's buggy!
+
+You can read about current limitations [here](https://github.com/brainly/html-sketchapp#why-experimental).
+
+
+# What's next?
+
+Importing whole pages shows what [html-sketchapp](https://github.com/brainly/html-sketchapp) can do, but it's probably not that much useful (is it?). See [brainly/html-sketchapp-style-guide](https://github.com/brainly/html-sketchapp-style-guide) which is used at Brainly to convert front-end style guide into a set of Sketch symbols, text styles and document colors.
