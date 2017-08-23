@@ -18,11 +18,6 @@ puppeteer.launch().then(async browser => {
     networkIdleInflight: 5
   });
 
-  page.on('console', (...args) => {
-    for (let i =0; i < args.length; ++i)
-      console.log(`${i}: ${args[i]}`);
-  });
-
   await page.injectFile('./build/page2layers.bundle.js');
   const asketchPageJSON = await page.evaluate('page2layers.run()');
 

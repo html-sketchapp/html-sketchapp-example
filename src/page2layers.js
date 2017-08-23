@@ -19,4 +19,4 @@ export function run() {
 
       return page.toJSON();
     });
-};
+}
