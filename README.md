@@ -14,4 +14,4 @@ npm run build # builds src/page2layers.js script that gets injected into a page
 npm run inject http://sketchapp.com . # takes an URL and path where page.asketch.json should be saved
 ```
 
-Created `page.asketch.json` file can then be loaded into Sketch using a [brainly/html-sketchapp](https://github.com/brainly/html-sketchapp) plugin.
+Created `page.asketch.json` file can then be loaded into Sketch using the [brainly/html-sketchapp](https://github.com/brainly/html-sketchapp) plugin.
