@@ -1,7 +1,7 @@
 {
   "name": "html-sketchapp-example",
   "version": "1.0.0",
-  "description": "Template / example usage of brainly/html-sketchapp",
+  "description": "Example use of brainly/html-sketchapp",
   "scripts": {
     "test": "eslint src/",
     "build": "webpack",
