@@ -19,7 +19,7 @@
     "frontend-tools-configs": "git+https://github.com/brainly/frontend-tools-configs.git"
   },
   "dependencies": {
-    "html-sketchapp": "github:brainly/html-sketchapp#c150c9d1a00580d815794ba539cefeaa91ebda44",
+    "html-sketchapp": "github:brainly/html-sketchapp#713621317553f1a560b928a82e800ec98ff16139",
     "puppeteer": "^0.9.0",
     "webpack": "^3.0.0"
   }
