@@ -14,14 +14,22 @@ puppeteer.launch().then(async browser => {
 
   await page.setViewport({width: 800, height: 600});
   await page.goto(url, {
-    waitUntil: 'networkidle',
-    networkIdleInflight: 5
+    waitUntil: 'networkidle2'
   });
 
-  await page.injectFile('./build/page2layers.bundle.js');
-  const asketchPageJSON = await page.evaluate('page2layers.run()');
+  await page.addScriptTag({
+    path: './build/page2layers.bundle.js'
+  });
 
-  fs.writeFileSync(path.resolve(__dirname, outputFile), JSON.stringify(asketchPageJSON));
+  // JSON.parse + JSON.stringify hack is only needed until
+  // https://github.com/GoogleChrome/puppeteer/issues/1510 is fixed
+  const asketchPageJSONString = await page.evaluate(`
+    page2layers
+      .run()
+      .then(result => JSON.stringify(result))
+  `);
+
+  fs.writeFileSync(path.resolve(__dirname, outputFile), asketchPageJSONString);
 
   browser.close();
 });
