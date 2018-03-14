@@ -12,7 +12,7 @@ const outputFile = '../page.asketch.json';
 puppeteer.launch().then(async browser => {
   const page = await browser.newPage();
 
-  await page.setViewport({width: 800, height: 600});
+  await page.setViewport({width: 1280, height: 800});
   await page.goto(url, {
     waitUntil: 'networkidle2'
   });

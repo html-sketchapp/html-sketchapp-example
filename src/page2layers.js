@@ -1,5 +1,5 @@
-import Page from 'html-sketchapp/html2asketch/page.js';
-import nodeToSketchLayers from 'html-sketchapp/html2asketch/nodeToSketchLayers.js';
+import Page from '@brainly/html-sketchapp/html2asketch/page';
+import nodeToSketchLayers from '@brainly/html-sketchapp/html2asketch/nodeToSketchLayers';
 
 export function run() {
   const page = new Page({
