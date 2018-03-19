@@ -1,6 +1,10 @@
 import Page from '@brainly/html-sketchapp/html2asketch/page';
 import nodeToSketchLayers from '@brainly/html-sketchapp/html2asketch/nodeToSketchLayers';
 
+function flatten(arr) {
+  return [].concat(...arr);
+}
+
 export function run() {
   const page = new Page({
     width: document.body.offsetWidth,
@@ -9,14 +13,18 @@ export function run() {
 
   page.setName(document.title);
 
-  const waitingForLayers = Array.from(document.querySelectorAll('*')).map(nodeToSketchLayers);
+  const queue = [document.body];
+  const arrayOfLayers = [];
 
-  return Promise.all(waitingForLayers)
-    .then(layers => {
-      layers
-        .reduce((prev, current) => prev.concat(current), [])//single node can produce multiple layers - concatenate them
-        .forEach(layer => page.addLayer(layer));
+  while (queue.length) {
+    const node = queue.pop();
 
-      return page.toJSON();
-    });
+    arrayOfLayers.push(nodeToSketchLayers(node));
+
+    Array.from(node.children).forEach(child => queue.push(child));
+  }
+
+  flatten(arrayOfLayers).forEach(layer => page.addLayer(layer));
+
+  return page.toJSON();
 }
