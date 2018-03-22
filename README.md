@@ -18,7 +18,7 @@ Created `page.asketch.json` file can then be loaded into Sketch using the [brain
 
 # It's buggy!
 
-You can read about current limitations [here](https://github.com/brainly/html-sketchapp#why-experimental).
+You can read about current limitations [here](https://github.com/brainly/html-sketchapp/wiki/What's-supported%3F).
 
 
 # What's next?
