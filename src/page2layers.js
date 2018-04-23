@@ -1,10 +1,10 @@
-import Page from '@brainly/html-sketchapp/html2asketch/page';
-import nodeToSketchLayers from '@brainly/html-sketchapp/html2asketch/nodeToSketchLayers';
+import {Page, nodeToSketchLayers} from '@brainly/html-sketchapp';
 
 function flatten(arr) {
   return [].concat(...arr);
 }
 
+// Node: we could also use nodeTreeToSketchPage here and avoid traversing DOM ourselves
 export function run() {
   const page = new Page({
     width: document.body.offsetWidth,
