@@ -5,7 +5,7 @@ function flatten(arr) {
 }
 
 // Node: we could also use nodeTreeToSketchPage here and avoid traversing DOM ourselves
-export function run() {
+export function run(mainNode = document.body) {
   const page = new Page({
     width: document.body.offsetWidth,
     height: document.body.offsetHeight
@@ -13,7 +13,7 @@ export function run() {
 
   page.setName(document.title);
 
-  const queue = [document.body];
+  const queue = [mainNode];
   const arrayOfLayers = [];
 
   while (queue.length) {
