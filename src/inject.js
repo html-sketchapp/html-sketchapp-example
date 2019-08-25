@@ -18,7 +18,7 @@ puppeteer.launch().then(async browser => {
   });
 
   await page.addScriptTag({
-    path: './build/page2layers.bundle.js'
+    path: './dist/build/page2layers.bundle.js'
   });
 
   // JSON.parse + JSON.stringify hack is only needed until
