@@ -31,7 +31,10 @@ puppeteer.launch().then(async browser => {
 
   const asketchPage = await page.evaluate('page2layers.run()');
 
-  fs.writeFileSync(path.resolve(__dirname, outputFile), JSON.stringify(asketchPage));
+  fs.writeFileSync(
+    path.resolve(__dirname, outputFile),
+    JSON.stringify(asketchPage)
+  );
 
   browser.close();
 });
