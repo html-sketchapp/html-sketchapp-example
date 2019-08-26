@@ -1,6 +1,4 @@
-/build
 /dist
 /node_modules
 .editorconfig
-plugin.sketchplugin
 *.asketch.json

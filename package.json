@@ -1,19 +1,19 @@
 {
   "name": "html-sketchapp-example",
   "version": "1.0.0",
-  "description": "Example use of brainly/html-sketchapp",
+  "description": "Convert any website into an asketch.json file",
   "scripts": {
     "test": "eslint src/",
     "build": "webpack",
     "inject": "node ./src/inject.js"
   },
-  "repository": "brainly/html-sketchapp-example",
-  "author": "Konrad Dzwinel <konrad.dzwinel@brainly.com>",
+  "repository": "html-sketchapp/html-sketchapp-example",
+  "author": "Konrad Dzwinel <kdzwinel@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brainly/html-sketchapp-example/issues"
+    "url": "https://github.com/html-sketchapp/html-sketchapp-example/issues"
   },
-  "homepage": "https://github.com/brainly/html-sketchapp-example#readme",
+  "homepage": "https://github.com/html-sketchapp/html-sketchapp-example#readme",
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-brainly": "^2.1.1",
@@ -28,8 +28,8 @@
     "webpack-cli": "^3.2.0"
   },
   "dependencies": {
-    "@brainly/html-sketchapp": "^4.1.0",
-    "puppeteer": "^1.11.0",
+    "@brainly/html-sketchapp": "^4.3.0",
+    "puppeteer": "^1.19.0",
     "webpack": "^4.28.3"
   }
 }

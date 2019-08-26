@@ -1,13 +1,21 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
-
-if (process.argv.length < 3) {
-  throw new Error('Please provide input URL');
-}
+const URL = require('url').URL;
 
 const url = process.argv[2];
-const outputFile = '../page.asketch.json';
+let urlObj = null;
+
+try {
+  urlObj = new URL(url);
+} catch (e) {
+  console.error(
+    '⚠️ Please provide valid URL as a param (e.g. `npm run inject https://example.com`)'
+  );
+  process.exit();
+}
+
+const outputFile = `../${urlObj.hostname}.asketch.json`;
 
 puppeteer.launch().then(async browser => {
   const page = await browser.newPage();
@@ -21,13 +29,12 @@ puppeteer.launch().then(async browser => {
     path: './dist/build/page2layers.bundle.js'
   });
 
-  // JSON.parse + JSON.stringify hack is only needed until
-  // https://github.com/GoogleChrome/puppeteer/issues/1510 is fixed
-  const asketchPageJSONString = await page.evaluate(
-    'JSON.stringify(page2layers.run())'
-  );
+  const asketchPage = await page.evaluate('page2layers.run()');
 
-  fs.writeFileSync(path.resolve(__dirname, outputFile), asketchPageJSONString);
+  fs.writeFileSync(
+    path.resolve(__dirname, outputFile),
+    JSON.stringify(asketchPage)
+  );
 
   browser.close();
 });
