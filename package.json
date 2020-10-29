@@ -28,7 +28,7 @@
     "webpack-cli": "^3.2.0"
   },
   "dependencies": {
-    "@brainly/html-sketchapp": "^4.3.0",
+    "@brainly/html-sketchapp": "^4.4.1",
     "puppeteer": "^1.19.0",
     "webpack": "^4.28.3"
   }
